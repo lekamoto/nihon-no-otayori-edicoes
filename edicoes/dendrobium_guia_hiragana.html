@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>かんたん ガイド：デンドロビウム（らん）の そだてかた</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #e8f5e9;
+            --accent-pink: #d81b60;
+            --accent-pink-light: #fce4ec;
+            --warning-border: #f59e0b;
+            --warning-bg: #fffbeb;
+            --warning-text: #b45309;
+            --text-main: #2d3748;
+            --text-sub: #4a5568;
+            --card-bg: #ffffff;
+            --body-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, 'Yu Gothic', sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 16px;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, #43a047, #2e7d32);
+            color: #ffffff;
+            padding: 32px 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+        }
+
+        .content {
+            padding: 28px 24px;
+        }
+
+        .section-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 22px;
+            transition: transform 0.2s ease;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1b5e20;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .section-title span.icon {
+            font-size: 1.4rem;
+            margin-right: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: var(--text-sub);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .alert-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+            color: var(--warning-text);
+            font-size: 0.95rem;
+        }
+
+        .steps-box {
+            background-color: #f8fafc;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 12px 0;
+        }
+
+        .steps-box ol {
+            padding-left: 20px;
+            color: var(--text-sub);
+        }
+
+        .steps-box ol li {
+            padding-left: 4px;
+            margin-bottom: 6px;
+        }
+
+        .steps-box ol li::before {
+            content: none;
+        }
+
+        .danger-box {
+            background-color: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-top: 10px;
+            color: #991b1b;
+            font-size: 0.95rem;
+        }
+
+        .summary-card {
+            background: linear-gradient(135deg, #f1f8e9, #dcedc8);
+            border: 2px solid #aed581;
+            border-radius: 12px;
+            padding: 22px;
+            margin-top: 28px;
+        }
+
+        .summary-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #33691e;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .summary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .summary-item {
+            background: #ffffff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            font-size: 0.98rem;
+        }
+
+        .summary-badge {
+            background: #558b2f;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #a0aec0;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 12px 8px;
+            }
+            header h1 {
+                font-size: 1.35rem;
+            }
+            .content {
+                padding: 20px 14px;
+            }
+            .section-card {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🌸 かんたん ガイド<br>デンドロビウム（らん）の そだてかた</h1>
+    </header>
+
+    <div class="content">
+        <!-- 1. おきばしょ -->
+        <div class="section-card">
+            <h2 class="section-title">
+                <span class="icon">☀️</span> 1. おきばしょ（にっこう）
+            </h2>
+            <ul>
+                <li>へやの なかの <strong>あかるい ばしょ</strong>（まどの ちかく）に おいて ください。</li>
+                <li><strong>あさの やわらかい にっこう</strong>（ごぜん 9じ ごろまで）に あてるのは とても よいです。</li>
+            </ul>
+            <div class="alert-box">
+                ⚠️ <strong>ちゅうい：</strong> ひるまの つよい ちょくしゃにっこう には あてないで ください（はっぱが ひやけして いたんで しまいます）。
+            </div>
+        </div>
+
+        <!-- 2. みずやり -->
+        <div class="section-card">
+            <h2 class="section-title">
+                <span class="icon">💧</span> 2. みずやりの タイミング
+            </h2>
+            <p style="margin-bottom: 8px;"><strong>ゆびで かわきぐあいを チェックして ください：</strong></p>
+            <div class="steps-box">
+                <ol>
+                    <li>ゆびさきを はちの なか（きの かわ などの うえこみざい）に すこし いれてみます。</li>
+                    <li><strong>かわいている とき：</strong> たっぷりと おみずを あげて ください。</li>
+                    <li><strong>まだ しめっている とき：</strong> おみずは <strong>あげないで</strong> ください。かわくまで まちます。</li>
+                </ol>
+            </div>
+            <ul>
+                <li>あたたかい きせつ：しゅうに 1〜2かい が めやす です。</li>
+                <li>さむい きせつ：かいすうを へらして ください。</li>
+            </ul>
+        </div>
+
+        <!-- 3. うけざら -->
+        <div class="section-card">
+            <h2 class="section-title">
+                <span class="icon">⚠️</span> 3. とても たいせつな ルール：はちの したの おさら（うけざら）
+            </h2>
+            <ul>
+                <li>おみずを あげると、したの うけざらに おみずが ながれでて たまります。</li>
+                <li><strong>うけざらに たまった おみずは、かならず すべて すてて ください。</strong></li>
+            </ul>
+            <div class="danger-box">
+                ❌ <strong>おさらに おみずを ためた ままに しないで ください。</strong><br>
+                <small>（ねっこが くさってしまい、かれる げんいんに なります）。</small>
+            </div>
+        </div>
+
+        <!-- 4. はなを さかせる -->
+        <div class="section-card">
+            <h2 class="section-title">
+                <span class="icon">🌼</span> 4. はなを きれいに さかせる コツ
+            </h2>
+            <ul>
+                <li>あきから ふゆの さむい じきは、<strong>みずやりを ひかえめ</strong> に します。</li>
+                <li>よるの すこし ひんやりとした すずしい くうきに あてることで、あたらしい はなめが つきやすく なります。</li>
+            </ul>
+        </div>
+
+        <!-- まとめ -->
+        <div class="summary-card">
+            <h3 class="summary-title">たいせつな 3つの ポイント</h3>
+            <div class="summary-list">
+                <div class="summary-item">
+                    <span class="summary-badge">1</span>
+                    <div><strong>にっこう：</strong> あかるい ばしょに おく（つよい ちょくしゃにっこうは さける）。</div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-badge">2</span>
+                    <div><strong>みずやり：</strong> なかが かわいてから たっぷり あげる。</div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-badge">3</span>
+                    <div><strong>うけざら：</strong> たまった みずは かならず すてる。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        デンドロビウムのかんたん おていれ ガイド
+    </footer>
+</div>
+
+</body>
+</html>
