@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>かんたん ガイド：デンドロビウム（らん）の そだてかた</title>
+    <title>かんたん ガイド：あつくて かわいた ところでの デンドロビウム（らん）の そだてかた</title>
     <style>
         :root {
             --primary-color: #2e7d32;
             --primary-light: #e8f5e9;
             --accent-pink: #d81b60;
-            --accent-pink-light: #fce4ec;
             --warning-border: #f59e0b;
             --warning-bg: #fffbeb;
             --warning-text: #b45309;
+            --danger-border: #ef4444;
+            --danger-bg: #fef2f2;
+            --danger-text: #991b1b;
+            --info-border: #0284c7;
+            --info-bg: #f0f9ff;
+            --info-text: #0369a1;
             --text-main: #2d3748;
             --text-sub: #4a5568;
             --card-bg: #ffffff;
@@ -30,13 +35,13 @@
             font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, 'Yu Gothic', sans-serif;
             background-color: var(--body-bg);
             color: var(--text-main);
-            line-height: 1.8;
+            line-height: 1.85;
             font-size: 16px;
             padding: 30px 15px;
         }
 
         .container {
-            max-width: 720px;
+            max-width: 740px;
             margin: 0 auto;
             background: var(--card-bg);
             border-radius: 16px;
@@ -53,10 +58,20 @@
         }
 
         header h1 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: 0.05em;
-            line-height: 1.4;
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            font-size: 0.95rem;
+            opacity: 0.95;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
         }
 
         .content {
@@ -69,7 +84,6 @@
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 22px;
-            transition: transform 0.2s ease;
         }
 
         .section-title {
@@ -125,6 +139,26 @@
             font-size: 0.95rem;
         }
 
+        .info-box {
+            background-color: var(--info-bg);
+            border-left: 4px solid var(--info-border);
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+            color: var(--info-text);
+            font-size: 0.95rem;
+        }
+
+        .danger-box {
+            background-color: var(--danger-bg);
+            border-left: 4px solid var(--danger-border);
+            padding: 12px 16px;
+            border-radius: 6px;
+            margin-top: 10px;
+            color: var(--danger-text);
+            font-size: 0.95rem;
+        }
+
         .steps-box {
             background-color: #f8fafc;
             border-radius: 8px;
@@ -144,16 +178,6 @@
 
         .steps-box ol li::before {
             content: none;
-        }
-
-        .danger-box {
-            background-color: #fef2f2;
-            border-left: 4px solid #ef4444;
-            padding: 12px 16px;
-            border-radius: 6px;
-            margin-top: 10px;
-            color: #991b1b;
-            font-size: 0.95rem;
         }
 
         .summary-card {
@@ -192,8 +216,8 @@
             background: #558b2f;
             color: #ffffff;
             border-radius: 50%;
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -216,7 +240,7 @@
                 padding: 12px 8px;
             }
             header h1 {
-                font-size: 1.35rem;
+                font-size: 1.3rem;
             }
             .content {
                 padding: 20px 14px;
@@ -232,66 +256,94 @@
 <div class="container">
     <header>
         <h1>🌸 かんたん ガイド<br>デンドロビウム（らん）の そだてかた</h1>
+        <div class="subtitle">あつくて かわいた ばしょ用</div>
     </header>
 
     <div class="content">
         <!-- 1. おきばしょ -->
         <div class="section-card">
             <h2 class="section-title">
-                <span class="icon">☀️</span> 1. おきばしょ（にっこう）
+                <span class="icon">☀️</span> 1. おきばしょ（にっこうと あつさ）
             </h2>
             <ul>
-                <li>へやの なかの <strong>あかるい ばしょ</strong>（まどの ちかく）に おいて ください。</li>
-                <li><strong>あさの やわらかい にっこう</strong>（ごぜん 9じ ごろまで）に あてるのは とても よいです。</li>
+                <li>へやの なかの <strong>とても あかるい ばしょ</strong>で、<strong>つよい ひざしを さけて</strong> おいて ください。</li>
+                <li><strong>あさの とても よわい ひざし</strong>（あさ 8じ まで）だけ あてても よいです。</li>
             </ul>
             <div class="alert-box">
-                ⚠️ <strong>ちゅうい：</strong> ひるまの つよい ちょくしゃにっこう には あてないで ください（はっぱが ひやけして いたんで しまいます）。
+                ⚠️ <strong>ちゅうい：</strong> あつい まちでは、ひざしで はっぱが すぐに やけて いたんで しまいます。
             </div>
+            <ul style="margin-top: 10px;">
+                <li>かぜとおしが よく すずしい ばしょを えらんで ください（しめきった へやや、むしあつい へやには おかないで ください）。</li>
+            </ul>
         </div>
 
         <!-- 2. みずやり -->
         <div class="section-card">
             <h2 class="section-title">
-                <span class="icon">💧</span> 2. みずやりの タイミング
+                <span class="icon">💧</span> 2. みずやりの タイミング（おみず）
             </h2>
-            <p style="margin-bottom: 8px;"><strong>ゆびで かわきぐあいを チェックして ください：</strong></p>
+            <p style="margin-bottom: 8px; color: #b45309; font-weight: bold;">
+                あつくて かわいた きこうでは、はちの なかが すぐに かわきます！
+            </p>
+            <p style="margin-bottom: 8px;"><strong>かならず ゆびで かわきぐあいを チェックして ください：</strong></p>
             <div class="steps-box">
                 <ol>
-                    <li>ゆびさきを はちの なか（きの かわ などの うえこみざい）に すこし いれてみます。</li>
-                    <li><strong>かわいている とき：</strong> たっぷりと おみずを あげて ください。</li>
+                    <li>ゆびさきを はちの なか（きの かわの あいだ）に すこし いれてみます。</li>
+                    <li><strong>かわいている とき：</strong> したから ながれでるまで たっぷり おみずを あげます。</li>
                     <li><strong>まだ しめっている とき：</strong> おみずは <strong>あげないで</strong> ください。かわくまで まちます。</li>
                 </ol>
             </div>
             <ul>
-                <li>あたたかい きせつ：しゅうに 1〜2かい が めやす です。</li>
-                <li>さむい きせつ：かいすうを へらして ください。</li>
+                <li><strong>あつくて かわいている ひ：</strong> しゅうに <strong>2〜3かい</strong> が めやす です（ゆびで かくにんしてください）。</li>
+                <li>おみずやりは、<strong>あさ はやく</strong> か、<strong>ゆうがた</strong>が おすすめ です。</li>
             </ul>
         </div>
 
-        <!-- 3. うけざら -->
+        <!-- 3. くうきが かわいている とき -->
         <div class="section-card">
             <h2 class="section-title">
-                <span class="icon">⚠️</span> 3. とても たいせつな ルール：はちの したの おさら（うけざら）
+                <span class="icon">🌫️</span> 3. くうきが かわいている ときの コツ
             </h2>
             <ul>
-                <li>おみずを あげると、したの うけざらに おみずが ながれでて たまります。</li>
-                <li><strong>うけざらに たまった おみずは、かならず すべて すてて ください。</strong></li>
+                <li>くうきが とても かわいている とき、らんは のどが かわきます。</li>
+                <li>はちの まわりの くうき や、ちかくの ゆかに、きりふきで すこし おみずを まいても よいです。</li>
             </ul>
-            <div class="danger-box">
-                ❌ <strong>おさらに おみずを ためた ままに しないで ください。</strong><br>
-                <small>（ねっこが くさってしまい、かれる げんいんに なります）。</small>
+            <div class="alert-box">
+                ⚠️ <strong>ちゅうい：</strong> ひざしが はっぱに あたっている ときは、はっぱに おみずを かけないで ください。
             </div>
         </div>
 
-        <!-- 4. はなを さかせる -->
+        <!-- 4. うけざら -->
         <div class="section-card">
             <h2 class="section-title">
-                <span class="icon">🌼</span> 4. はなを きれいに さかせる コツ
+                <span class="icon">⚠️</span> 4. とても たいせつな ルール：はちの したの おさら（うけざら）
             </h2>
             <ul>
-                <li>あきから ふゆの さむい じきは、<strong>みずやりを ひかえめ</strong> に します。</li>
-                <li>よるの すこし ひんやりとした すずしい くうきに あてることで、あたらしい はなめが つきやすく なります。</li>
+                <li>おみずを あげると、したの おさらに おみずが ながれでます。</li>
+                <li><strong>おさらに たまった おみずは、かならず すべて すてて ください。</strong></li>
             </ul>
+            <div class="danger-box">
+                ❌ <strong>はちの そこが おみずに つかった ままに しないで ください。</strong><br>
+                <small>（たまった おみずで ねっこが くさってしまい、らんが かれて しまいます）。</small>
+            </div>
+        </div>
+
+        <!-- 5. はなを さかせる -->
+        <div class="section-card">
+            <h2 class="section-title">
+                <span class="icon">🌼</span> 5. はなを さかせる ために
+            </h2>
+            <div class="info-box" style="margin-bottom: 12px; margin-top: 0;">
+                らんは あつさと さむさの ちがいを かんじる ひつようが あります。はなを さかせる ために、ひるまは あたたかく、よるは すずしいのが すきです。
+            </div>
+            <p style="margin-bottom: 8px;"><strong>いちねんの なかで すずしい きせつ（あきや ふゆ）：</strong></p>
+            <ul>
+                <li>よるの すずしい かぜが あたる ばしょ（まどの ちかく など）に おいて ください。</li>
+                <li>この じきは <strong>おみずの りょうを へらして</strong> ください。</li>
+            </ul>
+            <p style="margin-top: 10px; color: var(--text-sub); font-size: 0.95rem;">
+                ※ よるも ずっと むしあつい ばしょに おくと、みどりの はっぱばかりが ふえて、はなが さきません。
+            </p>
         </div>
 
         <!-- まとめ -->
@@ -300,15 +352,15 @@
             <div class="summary-list">
                 <div class="summary-item">
                     <span class="summary-badge">1</span>
-                    <div><strong>にっこう：</strong> あかるい ばしょに おく（つよい ちょくしゃにっこうは さける）。</div>
+                    <div><strong>にっこう：</strong> とても あかるく、つよい ひざしは さける。</div>
                 </div>
                 <div class="summary-item">
                     <span class="summary-badge">2</span>
-                    <div><strong>みずやり：</strong> なかが かわいてから たっぷり あげる。</div>
+                    <div><strong>おみず：</strong> ゆびで チェックして、かわいている ひは かいすうを ふやす。</div>
                 </div>
                 <div class="summary-item">
                     <span class="summary-badge">3</span>
-                    <div><strong>うけざら：</strong> たまった みずは かならず すてる。</div>
+                    <div><strong>おさら：</strong> たまった おみずは かならず すてる。</div>
                 </div>
             </div>
         </div>
